@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="p-4 mb-3 bg-dark text-white border text-center ">
+            <h1>Contact Manager </h1>
+        </header>
+        @RenderBody()
+    </div>
+
+    <!-- Optional Scripts section -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

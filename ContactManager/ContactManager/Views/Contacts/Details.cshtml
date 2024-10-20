@@ -1,0 +1,55 @@
+﻿@model ContactManager.Models.Contact
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Contact Details</h1>
+
+<div>
+    <hr />
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>Name:</td>
+                <td>@Html.DisplayFor(model => model.Firstname) @Html.DisplayFor(model => model.Lastname)</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td>@Html.DisplayFor(model => model.Phone)</td>
+            </tr>
+            <tr>
+                <td>Organization:</td>
+                <td>@Html.DisplayFor(model => model.Organization)</td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>@Html.DisplayFor(model => model.Category.CategoryName)</td>
+            </tr>
+            <tr>
+                <td>Date added:</td>
+                <td>@Model.DateAdded.ToString("MM/dd/yyyy 'at' hh:mm tt")</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                   
+                    <a asp-action="Edit"
+                       asp-route-id="@Model?.ContactId"
+                       class="btn btn-dark">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@Model?.ContactId"
+                       class="btn btn-dark">Delete</a>
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="btn btn-dark">Cancel</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
